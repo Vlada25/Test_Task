@@ -192,7 +192,7 @@ namespace Task0
             this.Controls.Add(this.setTimeField);
             this.Controls.Add(this.label1);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Adapter";
             ((System.ComponentModel.ISupportInitialize)(this.Watch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
