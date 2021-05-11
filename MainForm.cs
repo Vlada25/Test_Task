@@ -85,7 +85,7 @@ namespace Task0
 
             for (int i = 0; i < 3; i++)
             {
-                MyArrows.DrawArrow(MyPens[i], arrowsEndPos[i].GetX(), arrowsEndPos[i].GetY(), e);
+                MyArrows.DrawArrow(MyPens[i], arrowsEndPos[i].X, arrowsEndPos[i].Y, e);
             }
 
             e.Graphics.FillEllipse(new SolidBrush(Color.Black), rectangle);
@@ -93,19 +93,22 @@ namespace Task0
         private void SetTime(int s, int m, int h)
         {
             int[] timeUnits = { 6 * s, 6 * m, 30 * h };
+
             for (int i = 0; i < 3; i++)
             {
                 anglesOfRotation[i] = timeUnits[i] - 90;
                 float cos = (float)Math.Cos(((Math.PI * anglesOfRotation[i]) / 180));
                 float sin = (float)Math.Sin(((Math.PI * anglesOfRotation[i]) / 180));
-                arrowsEndPos[i].SetX(Watch.Width / 2 + radius[i] * cos);
-                arrowsEndPos[i].SetY(Watch.Height / 2 + radius[i] * sin);
+                arrowsEndPos[i].X = Watch.Width / 2 + radius[i] * cos;
+                arrowsEndPos[i].Y = Watch.Height / 2 + radius[i] * sin;
             }
+
             Watch.Refresh();
         }
         private void ChangeTime(int value, int kindOfArrow)
         {
             int h, m = 0, s = 0;
+
             if (kindOfArrow == 0)
             {
                 h = value / 3600;

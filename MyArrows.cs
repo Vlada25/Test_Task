@@ -12,7 +12,7 @@ namespace Task0
         }
         public static void DrawArrow(Pen pen, float endX, float endY, PaintEventArgs e)
         {
-            e.Graphics.DrawLine(pen, GetStartPosition().GetX(), GetStartPosition().GetY(), endX, endY);
+            e.Graphics.DrawLine(pen, GetStartPosition().X, GetStartPosition().Y, endX, endY);
         }
     }
 }
